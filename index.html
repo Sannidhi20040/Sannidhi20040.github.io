@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sannidhi D Math · Computer Vision for Robots and Drones</title>
+  <meta name="description" content="Sannidhi D Math is a Mechatronics Engineering graduate from Manipal Institute of Technology working on computer vision for robots and drones.">
+  <meta name="author" content="Sannidhi D Math">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fbfbf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#131416" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://sannidhi20040.github.io/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231d5ca3'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' text-anchor='middle' fill='%23fff'%3ES%3C/text%3E%3C/svg%3E">
+
+  <!-- Open Graph / social previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sannidhi D Math">
+  <meta property="og:title" content="Sannidhi D Math · Computer Vision for Robots and Drones">
+  <meta property="og:description" content="Mechatronics Engineering graduate working on computer vision for robots and drones.">
+  <meta property="og:url" content="https://sannidhi20040.github.io/">
+  <!-- TODO: add a 1200x630 preview image, then uncomment:
+  <meta property="og:image" content="https://sannidhi20040.github.io/assets/og-image.png">
+  <meta property="og:image:alt" content="Sannidhi D Math, portfolio">
+  -->
+  <meta name="twitter:card" content="summary">
+
+  <!-- Critical CSS: colour tokens, base layout and the hero. The rest is in style.css. -->
+  <style>
+    :root {
+      --bg: #fbfbf8;
+      --surface: #f1f1ec;
+      --text: #1a1b1e;
+      --muted: #54565c;
+      --accent: #1d5ca3;
+      --accent-ink: #ffffff;
+      --border: #deded7;
+      --todo-bg: #fff1b8;
+      --todo-ink: #5a4300;
+      --todo-border: #c9a227;
+      --max: 720px;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --serif: "Iowan Old Style", Charter, "Palatino Linotype", Palatino, Georgia, serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #131416;
+        --surface: #1c1d21;
+        --text: #e7e7e9;
+        --muted: #a6a8ae;
+        --accent: #8db8f5;
+        --accent-ink: #0d1420;
+        --border: #2e3035;
+        --todo-bg: #3b3205;
+        --todo-ink: #ffe38f;
+        --todo-border: #8a7420;
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { color-scheme: light dark; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      font: 1.0625rem/1.65 var(--sans);
+      overflow-wrap: break-word;
+    }
+    .wrap { max-width: var(--max); margin-inline: auto; padding-inline: 16px; }
+    a { color: var(--accent); }
+
+    .skip {
+      position: absolute; left: 16px; top: -100px; z-index: 10;
+      padding: .5rem .75rem; background: var(--accent); color: var(--accent-ink);
+      border-radius: 4px; text-decoration: none;
+    }
+    .skip:focus { top: 8px; }
+
+    .site-header { border-bottom: 1px solid var(--border); background-color: var(--bg); }
+    .site-header nav {
+      display: flex; flex-wrap: wrap; align-items: baseline;
+      gap: .25rem 1.25rem; padding-block: .75rem;
+    }
+    .brand { font-family: var(--serif); font-weight: 700; color: var(--text); text-decoration: none; margin-right: auto; }
+    .nav-list { display: flex; flex-wrap: wrap; gap: .25rem 1rem; margin: 0; padding: 0; list-style: none; font-size: .9375rem; }
+    .nav-list a { color: var(--muted); text-decoration: none; }
+    .nav-list a:hover { color: var(--accent); text-decoration: underline; }
+
+    .hero { padding-block: 3.5rem 1rem; }
+    .hero h1 {
+      font-family: var(--serif); font-size: clamp(2.25rem, 7vw, 3.25rem);
+      line-height: 1.1; letter-spacing: -.01em; margin: 0 0 .75rem;
+    }
+    .lede { font-size: 1.25rem; line-height: 1.5; margin: 0 0 1rem; }
+    .hero .meta { color: var(--muted); font-size: .9375rem; margin: 0 0 1.25rem; }
+
+    .btn {
+      display: inline-block; padding: .55rem 1rem; border: 1px solid var(--accent);
+      border-radius: 6px; background: var(--accent); color: var(--accent-ink);
+      font-weight: 600; font-size: .9375rem; text-decoration: none; line-height: 1.4;
+    }
+    .btn:hover { filter: brightness(1.1); }
+    .btn-ghost { background: transparent; color: var(--accent); }
+    .btn-ghost:hover { background: var(--surface); filter: none; }
+
+    .todo {
+      background: var(--todo-bg); color: var(--todo-ink);
+      border: 1px dashed var(--todo-border); border-radius: 3px;
+      padding: 0 .3em; font-size: .875em; font-weight: 600;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="wrap" aria-label="Sections">
+      <a class="brand" href="#top">Sannidhi D Math</a>
+      <ul class="nav-list">
+        <li><a href="#project">Project</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="hero" id="top" aria-labelledby="name">
+      <h1 id="name">Sannidhi D Math</h1>
+      <p class="lede">Mechatronics engineer working on computer vision for robots and drones.</p>
+      <p class="meta">
+        B.Tech, Mechatronics Engineering (Minor: IIoT)<br>
+        Manipal Institute of Technology, 2022–2026 · CGPA 8.26/10<br>
+        Bangalore, India
+      </p>
+      <p>
+        <strong>Research interests:</strong> perception for physical systems, and the verification and evaluation of vision and AI models against real ground truth.
+      </p>
+      <ul class="links" aria-label="Profiles and contact">
+        <li><a href="https://github.com/Sannidhi20040"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/sannidhi-math-2b1aa3202/"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a></li>
+        <li><a href="mailto:sannidhimath@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g></svg>sannidhimath@gmail.com</a></li>
+      </ul>
+      <p><a class="btn" href="cv.pdf" download>Download CV (PDF)</a></p>
+    </section>
+
+    <section id="project" aria-labelledby="project-h">
+      <h2 id="project-h">Featured project</h2>
+      <article class="feature">
+        <h3>Traffic Drone Geo-Referencing System</h3>
+        <p class="tags">YOLOv8 · VisDrone · ONNX in the browser · Flight-log telemetry · Leaflet</p>
+
+        <p>Detects small vehicles, large vehicles and people in drone video, then turns each detection into a position on a map.</p>
+        <ul class="points">
+          <li><strong>Detection:</strong> YOLOv8 trained on VisDrone (9,287 images), mAP50 0.583, exported to ONNX and run in the browser.</li>
+          <li><strong>Telemetry sync:</strong> video frames are synchronised with flight-log telemetry.</li>
+          <li><strong>Geo-referencing:</strong> each detection is converted to a GPS coordinate using altitude, field of view and drone heading.</li>
+          <li><strong>De-duplication:</strong> repeat detections within 5 m are merged.</li>
+          <li><strong>Output:</strong> an interactive Leaflet map, with GeoJSON and CSV export.</li>
+        </ul>
+        <p class="actions">
+          <a class="btn" href="https://sannidhi20040.github.io/drone-georeferencing/">Live demo</a>
+          <a class="btn btn-ghost" href="https://github.com/Sannidhi20040/drone-georeferencing">Code on GitHub</a>
+        </p>
+      </article>
+    </section>
+
+    <section id="experience" aria-labelledby="experience-h">
+      <h2 id="experience-h">Experience</h2>
+
+      <article class="entry">
+        <header class="entry-head">
+          <h3>Ather Energy <span class="role">· Software Intern</span></h3>
+          <p class="when">Mar–Aug 2026</p>
+        </header>
+        <ul>
+          <li>Sole owner of an LLM-based root-cause-analysis agent for vehicle ECU and CAN-bus logs, with a critic stage that checks each conclusion against raw telemetry.</li>
+          <li>Worked on a certificate-renewal solution and communication-failure diagnostics for EV chargers.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <header class="entry-head">
+          <h3>Team RoboManipal <span class="role">· Technical Member, Autonomous Agricultural Robot</span></h3>
+          <p class="when">Feb 2024–Jul 2025</p>
+        </header>
+        <ul>
+          <li>Perception for an autonomous agricultural robot: visual odometry, depth estimation, path planning, sensor calibration and field trials.</li>
+          <li>ResNet-18 plant classifier with 92% accuracy.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <header class="entry-head">
+          <h3>IISc-TCS Innovation Lab <span class="role">· Intern, Hyperspectral Imaging</span></h3>
+          <p class="when">Jun–Jul 2024</p>
+        </header>
+        <ul>
+          <li>Hyperspectral imaging: K-Means/PCA pipeline over 10,000+ spectral signatures, improving classification accuracy by 15%.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="publications" aria-labelledby="publications-h">
+      <h2 id="publications-h">Publications</h2>
+      <ol class="pubs">
+        <li>
+          <p class="pub-title">Residential Building Energy Performance Analysis Using Machine Learning Algorithms</p>
+          <p class="pub-authors"><strong>Sannidhi D Math</strong>, Nilay D Trivedi, Aditya Thapa, B R K Holla, Nikhil Pachauri</p>
+          <p class="pub-meta">2025 IEEE 3rd International Conference on Computational Intelligence and Network Systems (CINS), pp. 1–5</p>
+          <p class="pub-note">XGBoost ensemble for predicting heating and cooling loads, compared against RF, LR, KNN and SVR. RMSE 0.407 (heating) and 0.858 (cooling).</p>
+          <p><a href="https://doi.org/10.1109/CINS67018.2025.11411946">IEEE Xplore · doi:10.1109/CINS67018.2025.11411946</a></p>
+        </li>
+        <li>
+          <p class="pub-title">Soft Computing and Machine Learning Approaches for Mapping in an Indian Coastal City for Flood Vulnerability</p>
+          <p class="pub-authors">Sting Salvador Gonsalis, <strong>Sannidhi D. Math</strong>, Kaushik Naidu, Rohith Narayan H S, Anadya Dang, Varma Nakul Rajendra, Shweta Vincent, Om Prakash Kumar, Vijay Mohan</p>
+          <p class="pub-meta">2024 Third International Conference on Artificial Intelligence, Computational Electronics and Communication System (AICECS), pp. 1–9</p>
+          <p class="pub-note">Hybrid SVM and genetic-algorithm model for flood susceptibility mapping of Chennai from fifteen flood conditioning factors; 80% accuracy.</p>
+          <p><a href="https://doi.org/10.1109/AICECS63354.2024.10956247">IEEE Xplore · doi:10.1109/AICECS63354.2024.10956247</a></p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills</h2>
+      <dl class="skills">
+        <div>
+          <dt>Languages</dt>
+          <dd>Python, C++, C, SQL, Java</dd>
+        </div>
+        <div>
+          <dt>Vision and ML</dt>
+          <dd>YOLOv8, ONNX, CNNs, ResNet-18, OpenCV, visual odometry, depth estimation, hyperspectral imaging, K-Means, PCA, XGBoost, LLM-based agents</dd>
+        </div>
+        <div>
+          <dt>Robotics and ROS 2</dt>
+          <dd>ROS 2 (nodes, services), URDF, Gazebo, ros2_control, SLAM, Nav2, PID control, path planning, sensor calibration, CAN-bus log analysis</dd>
+        </div>
+        <div>
+          <dt>Tools</dt>
+          <dd>Linux (bash, ssh), Git, FastAPI, SQLite, Leaflet, GeoJSON, GIS</dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h">Contact</h2>
+      <p>Email is the best way to reach me.</p>
+      <ul class="links">
+        <li><a href="mailto:sannidhimath@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g></svg>sannidhimath@gmail.com</a></li>
+        <li><a href="https://github.com/Sannidhi20040"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/sannidhi-math-2b1aa3202/"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a></li>
+      </ul>
+      <p class="small muted">© 2026 Sannidhi D Math</p>
+    </div>
+  </footer>
+</body>
+</html>

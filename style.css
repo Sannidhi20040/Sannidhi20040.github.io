@@ -1,0 +1,138 @@
+/* Non-critical styles. Colour tokens, base layout and the hero are inlined in index.html. */
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+a { text-underline-offset: .18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Sticky nav on wider screens only, so it doesn't use up a phone screen */
+@media (min-width: 640px) {
+  .site-header { position: sticky; top: 0; z-index: 5; }
+  section, .site-footer { scroll-margin-top: 4rem; }
+}
+
+/* Sections */
+section { padding-block: 3rem 0; }
+section + section { border-top: 1px solid var(--border); margin-top: 3rem; }
+.hero + section { margin-top: 2rem; }
+
+h2 {
+  font-family: var(--serif);
+  font-size: 1.625rem;
+  line-height: 1.25;
+  margin: 0 0 1.5rem;
+}
+h3 {
+  font-size: 1.125rem;
+  line-height: 1.35;
+  margin: 0 0 .5rem;
+}
+p { margin: 0 0 1rem; }
+ul, ol { margin: 0 0 1rem; padding-left: 1.25rem; }
+li { margin-bottom: .35rem; }
+li::marker { color: var(--muted); }
+
+.small { font-size: .9375rem; }
+.muted { color: var(--muted); }
+
+/* Inline link lists (hero, footer) */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+.links li { margin: 0; }
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .4rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: .9375rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: border-color .15s, color .15s;
+}
+.links a:hover { border-color: var(--accent); color: var(--accent); }
+.links svg { width: 1.05em; height: 1.05em; flex: none; }
+.site-footer .links a { background: var(--bg); }
+
+/* Featured project */
+.feature h3 { font-family: var(--serif); font-size: 1.375rem; }
+.tags { color: var(--muted); font-size: .875rem; letter-spacing: .01em; }
+
+.points li { margin-bottom: .5rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+
+/* Experience and project entries */
+.entry + .entry { margin-top: 2rem; }
+.entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0 1rem;
+  margin-bottom: .5rem;
+}
+.entry-head h3 { margin: 0; }
+.role { font-weight: 400; color: var(--muted); }
+.when {
+  margin: 0;
+  color: var(--muted);
+  font-size: .9375rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Publications */
+.pubs { padding-left: 1.5rem; }
+.pubs > li + li { margin-top: 1.5rem; }
+.pubs p { margin: 0 0 .25rem; }
+.pub-title { font-weight: 600; }
+.pub-authors { font-size: .9375rem; }
+.pub-authors strong { font-weight: 600; }
+.pub-meta { color: var(--muted); font-size: .9375rem; font-style: italic; }
+.pub-note { color: var(--muted); font-size: .9375rem; }
+.pubs a { font-size: .9375rem; }
+
+/* Skills */
+.skills { margin: 0; }
+.skills > div { padding-block: .75rem; border-bottom: 1px solid var(--border); }
+.skills > div:first-child { padding-top: 0; }
+.skills > div:last-child { border-bottom: 0; }
+.skills dt { font-weight: 600; margin-bottom: .15rem; }
+.skills dd { margin: 0; color: var(--muted); }
+
+@media (min-width: 640px) {
+  .skills > div { display: grid; grid-template-columns: 11rem 1fr; gap: 1rem; }
+  .skills dt { margin: 0; }
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 4rem;
+  padding-block: 3rem 2rem;
+  border-top: 1px solid var(--border);
+  background-color: var(--surface);
+}
+.site-footer h2 { margin-bottom: .75rem; }
+
+@media print {
+  .site-header, .skip { display: none; }
+  .site-footer { background: none; }
+}
