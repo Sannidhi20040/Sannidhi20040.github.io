@@ -116,7 +116,7 @@
     <nav class="wrap" aria-label="Sections">
       <a class="brand" href="#top">Sannidhi D Math</a>
       <ul class="nav-list">
-        <li><a href="#project">Project</a></li>
+        <li><a href="#project">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -146,7 +146,7 @@
     </section>
 
     <section id="project" aria-labelledby="project-h">
-      <h2 id="project-h">Featured project</h2>
+      <h2 id="project-h">Featured projects</h2>
       <article class="feature">
         <h3>Traffic Drone Geo-Referencing System</h3>
         <p class="tags">YOLOv8 · VisDrone · ONNX in the browser · Flight-log telemetry · Leaflet</p>
@@ -162,6 +162,35 @@
         <p class="actions">
           <a class="btn" href="https://sannidhi20040.github.io/drone-georeferencing/">Live demo</a>
           <a class="btn btn-ghost" href="https://github.com/Sannidhi20040/drone-georeferencing">Code on GitHub</a>
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3>GPU Kernels for Vision and LLM Workloads</h3>
+        <p class="tags">CUDA · Triton · PyTorch · NVIDIA Tesla T4</p>
+
+        <p>A from-scratch learning project in GPU programming: custom CUDA and Triton kernels for image preprocessing and LLM layers, each tested against a PyTorch reference and benchmarked against eager PyTorch and <code>torch.compile</code>. Every number is reported as measured, including the cases where PyTorch wins.</p>
+
+        <h4>Highlights (Tesla T4)</h4>
+        <ul class="points">
+          <li><strong>Fused image preprocessing</strong> (Triton): uint8 HWC to normalised float CHW in one pass. 4.6&times; faster than eager PyTorch and 1.2&times; faster than <code>torch.compile</code> at 1080p, with output matching PyTorch exactly in fp32.</li>
+          <li><strong>Fused RMSNorm</strong> (Triton): 1.15&ndash;1.28&times; faster than PyTorch&rsquo;s <code>F.rms_norm</code> and 1.07&ndash;1.12&times; faster than <code>torch.compile</code> at LLM hidden sizes 4096&ndash;8192 (fp16), at about 65% of peak memory bandwidth.</li>
+          <li><strong>Pairwise IoU</strong> (Triton): 12&ndash;14&times; faster than <code>torchvision.ops.box_iou</code> at N = 4096&ndash;8192.</li>
+          <li><strong>Fused softmax</strong> (Triton): up to 1.5&times; faster than <code>torch.softmax</code> on long rows.</li>
+          <li><strong>CUDA warm-ups:</strong> warp-shuffle reduction (~58% of peak bandwidth), naive vs tiled matmul, direct convolution.</li>
+        </ul>
+        <p>All 64 tests pass on the GPU, and every CUDA program checks its own output.</p>
+
+        <h4>What I learned</h4>
+        <ul class="points">
+          <li><strong>Fusion is about bytes, not math.</strong> Eager preprocessing launches 4 kernels and moves about 5.8&times; more data than one fused pass; that traffic accounts for almost the entire speedup.</li>
+          <li><strong>Compare against the strong baseline.</strong> <code>torch.compile</code> also fuses, so the honest comparison is 1.2&times;, not 4.6&times;. I report both.</li>
+          <li><strong>Know where a kernel loses.</strong> RMSNorm and softmax are slower than PyTorch on short rows, and shared-memory tiling made the 3&times;3 convolution <em>slower</em> because the hardware caches already captured the reuse.</li>
+        </ul>
+        <p class="small muted">Limitations: tested on one GPU model (T4); RMSNorm is forward-only; the tiled matmul reaches 17% of cuBLAS. A learning project, not a replacement for vendor libraries.</p>
+
+        <p class="actions">
+          <a class="btn btn-ghost" href="https://github.com/Sannidhi20040/GPU_kernel_p">Code, tests and benchmarks on GitHub</a>
         </p>
       </article>
     </section>
@@ -232,6 +261,10 @@
         <div>
           <dt>Vision and ML</dt>
           <dd>YOLOv8, ONNX, CNNs, ResNet-18, OpenCV, visual odometry, depth estimation, hyperspectral imaging, K-Means, PCA, XGBoost, LLM-based agents</dd>
+        </div>
+        <div>
+          <dt>GPU programming</dt>
+          <dd>CUDA, Triton, PyTorch, torch.compile, kernel benchmarking and profiling</dd>
         </div>
         <div>
           <dt>Robotics and ROS 2</dt>
